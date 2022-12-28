@@ -1,28 +1,39 @@
 /* 
-initial step up:
-    1. npx create-react-app content-management-application
-    2. create git repository and push the initial code
-    3. start taking log for every step and then push the code to github
-    4. In src create folders> layout, pages, components, routes, thunk
-    5. pages, layout> (folders) Main, Others
-    6. Main> Home.js
-    7. 
-    8. 
-    9. 
+initial stepUp:
+    1. create-react-app
+    2. create git repository
+    3. start taking log
+    4. In src:
+        * components
+        * layout
+        * pages
+        * routes
+        * thunk
+    5. In pages & layout:
+        * Main
+        * DashBoard
 
-routes step up:
+initial routes stepUp:
     1. npm install react-router-dom
-    2. 
-    3. 
-    4. 
-    5. 
-    6. 
-    7. 
-    8. 
-    9. 
-    10. 
-    11. 
-    12. 
-    13. 
+    2. routes.js:
+        * const router = createBrowserRouter([{}]);     //export router
+    3. app.js:
+        * <RouterProvider router={router} />            //import router
+
+initial layout stepUp:
+    1. Main
+        * Main.js
+        * NavBar.js
+    2. DashBoard
+        * DashBoard.js
+        * SideBar.js
+
+initial page stepUp:
+    1. Main
+        * page 1
+        * page 2
+    2. DashBoard
+        * page 1
+        * page 2
 
 */

@@ -8,6 +8,9 @@
 # testing
 /coverage
 
+# notes
+_project_discription.js
+
 # production
 /build
 

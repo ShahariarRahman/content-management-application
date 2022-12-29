@@ -25,8 +25,8 @@ initial layout stepUp:
         * Main.js
         * NavBar.js
     2. DashBoard
-        * DashBoard.js
-        * SideBar.js
+        * Dashboard.js
+        * Sidebar.js
 
 initial page stepUp:
     1. Main

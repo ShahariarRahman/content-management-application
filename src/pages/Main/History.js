@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Sidebar = () => {
+const History = () => {
     return (
         <div>
-            SideBar
+            History
         </div>
     );
 };
 
-export default Sidebar;
+export default History;

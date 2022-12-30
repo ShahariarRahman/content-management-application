@@ -1,11 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
-import Dashboard from "../layout/Dashboard/Dashboard";
-import Main from "../layout/Main/Main";
+import Dashboard from "../layouts/Dashboard/Dashboard";
+import Main from "../layouts/Main/Main";
 import Home from "../pages/Main/Home";
-import HomePageTwo from "../pages/Main/HomePageTwo";
-import HomePageThree from "../pages/Main/HomePageThree";
-import DashboardPageOne from "../pages/Dashboard/DashboardPageOne";
-import DashboardPageTwo from "../pages/Dashboard/DashboardPageTwo";
+import History from "../pages/Main/History";
+import BlogList from "../pages/Dashboard/BlogList";
+import AddBlog from "../pages/Dashboard/AddBlog";
 
 const router = createBrowserRouter([
     {
@@ -17,12 +16,8 @@ const router = createBrowserRouter([
                 element: <Home />,
             },
             {
-                path: "/page-two",
-                element: <HomePageTwo />,
-            },
-            {
-                path: "/page-three",
-                element: <HomePageThree />,
+                path: "/history",
+                element: <History />,
             },
         ],
     },
@@ -32,15 +27,11 @@ const router = createBrowserRouter([
         children: [
             {
                 path: "/dashboard",
-                element: <Home />,
+                element: <BlogList />,
             },
             {
-                path: "page-one",
-                element: <DashboardPageOne />,
-            },
-            {
-                path: "page-two",
-                element: <DashboardPageTwo />,
+                path: "addBlog",
+                element: <AddBlog />,
             },
         ],
     },

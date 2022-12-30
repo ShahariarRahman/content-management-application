@@ -5,11 +5,11 @@ initial stepUp:
     3. start taking log
     4. In src:
         * components
-        * layout
+        * layouts
         * pages
         * routes
         * thunk
-    5. In pages & layout:
+    5. In pages & layouts:
         * Main
         * DashBoard
 
@@ -20,7 +20,7 @@ initial routes stepUp:
     3. app.js:
         * <RouterProvider router={router} />            //import router
 
-initial layout stepUp:
+initial layouts stepUp:
     1. Main
         * Main.js
         * NavBar.js

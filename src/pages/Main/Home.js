@@ -6,8 +6,6 @@ const Home = () => {
         <div>
             <div className='grid grid-cols-3 gap-5 mx-5 mt-5'>
                 <BlogCard />
-                <BlogCard />
-                <BlogCard />
             </div>
         </div>
     );

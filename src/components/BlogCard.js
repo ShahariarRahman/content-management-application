@@ -2,7 +2,7 @@ import React from 'react';
 
 const BlogCard = ({ blog }) => {
     return (
-        <div className="max-w-sm w-full lg:max-w-full lg:flex">
+        <div className="max-w-lg w-full lg:max-w-full lg:flex">
             <div className="border border-gray-400 bg-white p-4 flex flex-col justify-between leading-normal rounded-lg">
                 <div className="mb-8">
                     <p className="text-sm text-gray-600 flex items-center">

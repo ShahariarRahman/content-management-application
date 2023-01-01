@@ -8,8 +8,8 @@ const Sidebar = () => {
                 <div className="sidebar-content px-4 py-6">
                     <ul className="flex flex-col w-full">
                         <li className="my-px">
-                            <Link to={'/'} className="flex flex-row items-center h-10 px-3 rounded-lg text-gray-300">
-                                <span className="flex items-center justify-center text-lg text-gray-400">
+                            <Link to={'/'} className="flex flex-row items-center h-10 px-3 rounded-lg bg-gray-300">
+                                <span className="flex items-center justify-center text-lg">
                                     <svg
                                         fill="none"
                                         strokeLinecap="round"

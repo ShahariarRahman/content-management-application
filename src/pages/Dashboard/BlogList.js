@@ -1,4 +1,6 @@
 import React from 'react';
+import { RiDeleteBin2Line } from 'react-icons/ri';
+import { BiEdit } from 'react-icons/bi';
 
 const BlogList = () => {
     return (
@@ -12,30 +14,28 @@ const BlogList = () => {
                                     <thead className="border-b bg-gray-700">
                                         <tr>
                                             <th scope="col" className="text-sm font-medium text-white px-6 py-4">
-                                                #
+                                                Title
                                             </th>
                                             <th scope="col" className="text-sm font-medium text-white px-6 py-4">
-                                                First
+                                                Published on
                                             </th>
-                                            <th scope="col" className="text-sm font-medium text-white px-6 py-4">
-                                                Last
-                                            </th>
-                                            <th scope="col" className="text-sm font-medium text-white px-6 py-4">
-                                                Handle
-                                            </th>
+                                            <th scope="col" className="text-sm font-medium text-white px-6 py-4">Update</th>
+                                            <th scope="col" className="text-sm font-medium text-white px-6 py-4">Delete</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr className="bg-white border-b">
-                                            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">1</td>
+                                            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">ReactJS is better than other javaScript library library</td>
                                             <td className="text-sm text-gray-900 px-6 py-4 whitespace-nowrap">
-                                                Mark
+                                                2023-jan-01
                                             </td>
-                                            <td className="text-sm text-gray-900 px-6 py-4 whitespace-nowrap">
-                                                Otto
+                                            <td className="text-xl text-green-600 px-6 py-4 whitespace-nowrap">
+                                                <button > <BiEdit />  </button>
                                             </td>
-                                            <td className="text-sm text-gray-900 px-6 py-4 whitespace-nowrap">
-                                                @mdo
+                                            <td className="text-xl text-red-600 px-6 py-4 whitespace-nowrap">
+                                                <button>
+                                                    < RiDeleteBin2Line />
+                                                </button>
                                             </td>
                                         </tr >
                                     </tbody>

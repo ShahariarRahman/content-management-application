@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import { FaBlog } from 'react-icons/fa';
 const NavBar = () => {
     return (
         <nav className="bg-gray-800">
@@ -18,11 +18,16 @@ const NavBar = () => {
                         </button>
                     </div>
                     <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+                        <div className='text-gray-300 font-semibold text-md flex items-center space-x-5'>
+                            <FaBlog />
+                            <span>Ocean of Blogger</span>
+                        </div>
                         <div className="hidden sm:ml-6 sm:block">
-                            <div className="flex space-x-4">
+                            <div className="flex space-x-8">
                                 <Link to={'/'} className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</Link>
                                 <Link to={'/history'} className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">History</Link>
                                 <Link to={'/dashboard'} className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Dashboard</Link>
+                                <Link to={'/blog'} className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Blog</Link>
                             </div>
                         </div>
                     </div>

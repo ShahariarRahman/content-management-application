@@ -1,5 +1,6 @@
 import React from 'react';
 import { MdEmojiObjects } from 'react-icons/md';
+import { Link } from 'react-router-dom';
 
 const BlogCard = ({ blog }) => {
     const { _id, date, description, img, name, tags, title, } = blog || {};
@@ -26,7 +27,9 @@ const BlogCard = ({ blog }) => {
                             </div>
                         </div>
                     </div>
-                    <button className='text-white bg-gray-700 px-4 py-2 rounded-lg'>Details</button>
+                    <Link to={'blog'}>
+                        <button className='text-white bg-gray-700 px-4 py-2 rounded-lg'>Details</button>
+                    </Link>
                 </div>
             </div>
         </div>

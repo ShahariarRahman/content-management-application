@@ -17,37 +17,38 @@ const Blog = () => {
 
 
     const blog = blogs.find(blog => blog._id === blogId);
-    const { date, description, img, name, tags, title, } = blog;
+    const { date, description, img, name, tags, title, } = blog || {};
 
     return (
         <div className="px-5 mt-2">
-            <div className="max-w-7xl mx-auto border border-gray-400 bg-white p-4 flex flex-col justify-between leading-normal rounded-lg">
-                <div className="mb-2">
-                    <div className='flex font-semibold text-xl'>
-                        <div className="w-10 h-10 bg-black rounded-full mr-2 grid place-content-center overflow-hidden">
-                            <img className="w-16 h-16 object-contain" src={img} alt="Avatar of Jonathan Reinink" />
+            <div className="max-w-7xl mx-auto border border-gray-400 bg-white flex flex-col justify-between leading-normal rounded-lg">
+                <div className='sm:flex justify-around'>
+                    <div className='p-5 mx-5'>
+                        <div className="text-gray-900 font-bold text-2xl">{title}</div>
+                        <div className='flex items-center my-2'>
+                            < MdEmojiObjects />
+                            <p className="ml-2 text-sm uppercase text-gray-600 flex items-center">
+                                {tags && tags.map((tag, i) => <span
+                                    key={i}
+                                    className="pr-2 hover:underline"
+                                >
+                                    <a href={`https://www.google.com/search?q=${tag}`} target="blank">{tag}</a>
+                                </span>)}
+                            </p>
                         </div>
-                        <p className="text-gray-900 leading-none mt-2">{name}</p>
-                    </div>
-                    <div className='flex items-center mt-3'>
-                        < MdEmojiObjects />
-                        <p className="ml-2 text-sm text-gray-600 flex items-center">
-                            {tags.map((tag, i) => <span
-                                key={i}
-                                className="pr-2 hover:underline"
-                            >
-                                <a href={`https://www.google.com/search?q=${tag}`} target="blank">{tag}</a>
-                            </span>)}
-                        </p>
-                    </div>
-                </div>
-                <div className='grid grid-cols-6 mb-2'>
-                    <div className='col-span-5'>
-                        <div className="text-gray-900 font-bold text-xl mb-2">{title}</div>
                         <p className="text-gray-700 text-base">{description}</p>
                     </div>
-                    <div className="text-sm flex justify-end items-end">
-                        <p className="text-gray-600">Publish On : {date}</p>
+                    <div className="text-sm flex flex-col items-center justify-center min-w-max mt-12 sm:mt-0 border-l border-gray-400 p-5">
+                        <div className="mb-5">
+                            <div className="mr-2 grid place-content-center overflow-hidden">
+                                <img className="" src={img} alt="Avatar of Jonathan Reinink" />
+                            </div>
+                            <div className='text-center mt-4'>
+                                <p className="text-gray-600">Author</p>
+                                <p className="text-gray-900 text-xl font-semibold">{name}</p>
+                                <p className="text-gray-600">Publish On : {date}</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

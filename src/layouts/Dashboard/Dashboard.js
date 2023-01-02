@@ -4,7 +4,7 @@ import Sidebar from './Sidebar';
 
 const DashBoard = () => {
     return (
-        <div className="flex flex-row min-h-screen bg-gray-100 text-gray-800">
+        <div className="flex flex-row min-h-screen bg-gray-100 text-gray-800 cursor-context-menu">
             <Sidebar />
             <Outlet />
         </div>

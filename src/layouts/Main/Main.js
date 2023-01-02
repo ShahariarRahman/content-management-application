@@ -4,7 +4,7 @@ import NavBar from './NavBar';
 
 const Main = () => {
     return (
-        <div>
+        <div className='cursor-context-menu'>
             <NavBar />
             <Outlet />
         </div>

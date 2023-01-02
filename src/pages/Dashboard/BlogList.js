@@ -6,10 +6,13 @@ import loadBlogsData from '../../redux/thunk/blogs/fetchBlogs';
 
 const BlogList = () => {
     const blogs = useSelector(state => state.blog.blogs);
+
     const dispatch = useDispatch();
+
     useEffect(() => {
         dispatch(loadBlogsData());
     }, [dispatch]);
+
     return (
         <main className="flex flex-col flex-grow -ml-64 md:ml-0 transition-all duration-150 ease-in">
             <div className="flex flex-col flex-grow p-4 bg-gray-300">
@@ -37,7 +40,7 @@ const BlogList = () => {
                                             className="bg-white border-b"
                                         >
                                             <th className="text-sm text-gray-900 px-6 py-4 whitespace-nowrap font-medium">{index + 1}</th>
-                                            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{blog.title}</td>
+                                            <td title={blog.title} className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{blog.title.split(" ", 5).join(" ")}...</td>
                                             <td className="text-sm text-gray-900 px-6 py-4 whitespace-nowrap">{blog.date}</td>
                                             <td className="text-xl text-green-600 px-6 py-4 whitespace-nowrap">
                                                 <button > <BiEdit />  </button>

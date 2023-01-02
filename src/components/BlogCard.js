@@ -4,11 +4,15 @@ import { Link } from 'react-router-dom';
 
 const BlogCard = ({ blog }) => {
     const { _id, date, description, img, name, tags, title, } = blog;
+
+    const fixedWordLength = (sentence, wordLen) => {
+        return sentence.split(" ", wordLen).join(" ");
+    };
     return (
         <div className="max-w-lg w-full lg:max-w-full lg:flex">
             <div className="border border-gray-400 bg-white p-4 flex flex-col justify-between leading-normal rounded-lg">
                 <div className="mb-8">
-                    <div className="text-gray-900 font-bold text-xl mb-2">{title.slice(0, 30)}</div>
+                    <h2 title={title} className="text-gray-900 font-bold text-xl mb-2">{fixedWordLength(title, 6)}</h2>
                     <div className='flex items-center my-2'>
                         < MdEmojiObjects />
                         <p className="ml-2 text-sm text-gray-600 flex items-center">
@@ -20,7 +24,7 @@ const BlogCard = ({ blog }) => {
                             </span>)}
                         </p>
                     </div>
-                    <p className="text-gray-700 text-base">{description.slice(0, 70)}</p>
+                    <p className="text-gray-700 text-base">{fixedWordLength(description, 10)}</p>
                 </div>
                 <div className="flex flex-row-reverse items-center justify-between">
                     <div className='flex items-center'>

@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { RiDeleteBin2Line } from 'react-icons/ri';
 import { BiEdit } from 'react-icons/bi';
+import { useDispatch, useSelector } from 'react-redux';
+import loadBlogsData from '../../redux/thunk/blogs/fetchBlogs';
 
 const BlogList = () => {
+    const blogs = useSelector(state => state.blog.blogs);
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(loadBlogsData());
+    }, [dispatch]);
     return (
         <main className="flex flex-col flex-grow -ml-64 md:ml-0 transition-all duration-150 ease-in">
             <div className="flex flex-col flex-grow p-4 bg-gray-300">
@@ -25,12 +32,13 @@ const BlogList = () => {
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr className="bg-white border-b">
-                                            <th className="text-sm text-gray-900 px-6 py-4 whitespace-nowrap font-medium">1</th>
-                                            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">ReactJS is better than other javaScript library library</td>
-                                            <td className="text-sm text-gray-900 px-6 py-4 whitespace-nowrap">
-                                                2023-jan-01
-                                            </td>
+                                        {blogs.map((blog, index) => <tr
+                                            key={blog._id}
+                                            className="bg-white border-b"
+                                        >
+                                            <th className="text-sm text-gray-900 px-6 py-4 whitespace-nowrap font-medium">{index + 1}</th>
+                                            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{blog.title}</td>
+                                            <td className="text-sm text-gray-900 px-6 py-4 whitespace-nowrap">{blog.date}</td>
                                             <td className="text-xl text-green-600 px-6 py-4 whitespace-nowrap">
                                                 <button > <BiEdit />  </button>
                                             </td>
@@ -40,6 +48,8 @@ const BlogList = () => {
                                                 </button>
                                             </td>
                                         </tr >
+                                        )}
+
                                     </tbody>
                                 </table>
                             </div>

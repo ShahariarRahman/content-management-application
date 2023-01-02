@@ -1,7 +1,7 @@
 [
     {
         "_id": "0",
-        "date": "2023-jan-01",
+        "date": "2023-jan-02",
         "description": "Compared to other frontend frameworks, the React code is easier to maintain and is flexible due to its modular structure. This flexibility, in turn, saves huge amount of time and cost to businesses.",
         "img": "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?w=100&h=100",
         "name": "Md. Shahariar Rahman",
@@ -12,7 +12,7 @@
     },
     {
         "_id": "1",
-        "date": "2023-jan-01",
+        "date": "2023-jan-02",
         "description": "Compared to other frontend frameworks, the React code is easier to maintain and is flexible due to its modular structure. This flexibility, in turn, saves huge amount of time and cost to businesses.",
         "img": "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?w=100&h=100",
         "name": "Md. Shahariar Rahman",
@@ -24,7 +24,7 @@
     },
     {
         "_id": "2",
-        "date": "2023-jan-01",
+        "date": "2023-jan-02",
         "description": "Compared to other frontend frameworks, the React code is easier to maintain and is flexible due to its modular structure. This flexibility, in turn, saves huge amount of time and cost to businesses.",
         "img": "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?w=100&h=100",
         "name": "Md. Shahariar Rahman",

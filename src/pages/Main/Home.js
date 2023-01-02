@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import BlogCard from '../../components/BlogCard';
 import loadBlogsData from '../../redux/thunk/blogs/fetchBlogs';
 
 const Home = () => {
+    const blogs = useSelector(state => state.blog.blogs);
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(loadBlogsData());
@@ -34,12 +35,7 @@ const Home = () => {
                 </div>
             </div>
             <div className='max-w-screen-2xl grid lg:grid-cols-2 xl:grid-cols-3 gap-5 mx-5 mt-5'>
-                <BlogCard />
-                <BlogCard />
-                <BlogCard />
-                <BlogCard />
-                <BlogCard />
-                <BlogCard />
+                {blogs.map(blog => <BlogCard key={blog._id} blog={blog} />)}
             </div>
         </div>
     );

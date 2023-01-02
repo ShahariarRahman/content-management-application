@@ -2,6 +2,7 @@ import React from 'react';
 import BlogCard from '../../components/BlogCard';
 
 const Home = () => {
+
     return (
         <div className='mb-12'>
             <div className="w-full shadow p-5 bg-white sticky top-0">

@@ -1,17 +1,23 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
+import { format } from 'date-fns'
 
 const AddBlog = () => {
     const { register, handleSubmit } = useForm();
+
+    const date = format(new Date(), 'PP');
+
     const tags = [];
+
     const onSubmit = data => {
         for (const [key, value] of Object.entries(data)) {
             if ((value === true) && (key === "html" || key === "css" || key === "javaScript" || key === "reactJs" || key === "nodeJs" || key === "expressJs" || key === "mongodb")) {
                 tags.push(key);
             };
         };
+
         const blog = {
-            date: "2023-jan-01",
+            date: date,
             description: data.description,
             img: data.img,
             name: data.name,
@@ -123,7 +129,7 @@ const AddBlog = () => {
                                         defaultValue="Compared to other frontend frameworks, the React code is easier to maintain and is flexible due to its modular structure. This flexibility, in turn, saves huge amount of time and cost to businesses." {...register("description")}
                                         className="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                                         placeholder="Write here ..."
-                                        rows={3}
+                                        rows={4}
                                     />
                                 </div>
                                 <div className="mb-6 text-center">

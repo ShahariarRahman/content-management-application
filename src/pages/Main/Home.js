@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import BlogCard from '../../components/BlogCard';
+import loadBlogsData from '../../redux/thunk/blogs/fetchBlogs';
 
 const Home = () => {
-
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(loadBlogsData());
+    }, [dispatch]);
     return (
         <div className='mb-12'>
             <div className="w-full shadow p-5 bg-white sticky top-0">

@@ -39,7 +39,7 @@ const BlogCard = ({ blog }) => {
                         </div>
                     </div>
                     <Link to={`/blog/${_id}`}>
-                        <button className='text-white bg-gray-700 px-4 py-2 rounded-lg'>Details</button>
+                        <button className='text-white bg-gray-700 hover:bg-gray-800 px-4 py-2 rounded-lg'>Details</button>
                     </Link>
                 </div>
             </div>

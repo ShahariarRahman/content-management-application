@@ -4,8 +4,8 @@ import { BiEdit } from 'react-icons/bi';
 
 const BlogList = () => {
     return (
-        <main className="main flex flex-col flex-grow -ml-64 md:ml-0 transition-all duration-150 ease-in">
-            <div className="main-content flex flex-col flex-grow p-4 bg-gray-300">
+        <main className="flex flex-col flex-grow -ml-64 md:ml-0 transition-all duration-150 ease-in">
+            <div className="flex flex-col flex-grow p-4 bg-gray-300">
                 <div className="flex flex-col">
                     <div className="overflow-x-auto">
                         <div className="inline-block min-w-full">
@@ -13,6 +13,7 @@ const BlogList = () => {
                                 <table className="min-w-full text-center">
                                     <thead className="border-b bg-gray-700">
                                         <tr>
+                                            <th></th>
                                             <th scope="col" className="text-sm font-medium text-white px-6 py-4">
                                                 Title
                                             </th>
@@ -25,6 +26,7 @@ const BlogList = () => {
                                     </thead>
                                     <tbody>
                                         <tr className="bg-white border-b">
+                                            <th className="text-sm text-gray-900 px-6 py-4 whitespace-nowrap font-medium">1</th>
                                             <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">ReactJS is better than other javaScript library library</td>
                                             <td className="text-sm text-gray-900 px-6 py-4 whitespace-nowrap">
                                                 2023-jan-01

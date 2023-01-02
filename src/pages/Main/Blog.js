@@ -1,8 +1,10 @@
 import React from 'react';
 import { MdEmojiObjects } from 'react-icons/md';
+import { useParams } from 'react-router-dom';
 
 const Blog = ({ blog }) => {
     const { _id, date, description, img, name, tags, title, } = blog || {};
+    const { blogId } = useParams();
     return (
         <div className="px-5 mt-2">
             <div className="border border-gray-400 bg-white p-4 flex flex-col justify-between leading-normal rounded-lg">

@@ -1,15 +1,13 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
-import { format } from 'date-fns'
 import { useDispatch } from 'react-redux';
-import { addBlog } from '../../redux/actions/blogsActions';
+import addBlogData from '../../redux/thunk/blogs/addBlogData';
 
 const AddBlog = () => {
     const dispatch = useDispatch();
     const { register, handleSubmit } = useForm();
 
-    const date = format(new Date(), 'PP');
-    const time = format(new Date(), 'pp');
+    const date = new Date().toString();
 
     const tags = [];
 
@@ -21,14 +19,14 @@ const AddBlog = () => {
         };
 
         const blog = {
-            date: [time, date,],
+            date: date,
             title: data.title,
             tags: tags,
             description: data.description,
             name: data.name,
             img: data.img,
         };
-        dispatch(addBlog(blog));
+        dispatch(addBlogData(blog));
     };
     return (
         <main className="main flex flex-col flex-grow -ml-64 md:ml-0 transition-all duration-150 ease-in bg-gray-300">
@@ -67,13 +65,13 @@ const AddBlog = () => {
                                                 <label htmlFor="css">Css</label>
 
                                                 <input
-                                                    {...register("javascript")} checked
+                                                    {...register("javascript")} defaultChecked
                                                     type="checkbox" name="javascript" id='javascript' className='mx-2'
                                                 />
                                                 <label htmlFor="javascript">JavaScript</label>
 
                                                 <input
-                                                    {...register("reactJs")} checked
+                                                    {...register("reactJs")} defaultChecked
                                                     type="checkbox" name="reactJs" id='reactJs' className='mx-2'
                                                 />
                                                 <label htmlFor="reactJs">ReactJS</label>

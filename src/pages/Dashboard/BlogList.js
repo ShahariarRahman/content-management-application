@@ -12,7 +12,6 @@ const BlogList = () => {
     useEffect(() => {
         dispatch(loadBlogsData());
     }, [dispatch]);
-
     return (
         <main className="flex flex-col flex-grow -ml-64 md:ml-0 transition-all duration-150 ease-in">
             <div className="flex flex-col flex-grow p-4 bg-gray-300">

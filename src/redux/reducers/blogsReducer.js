@@ -15,8 +15,8 @@ const blogsReducer = (state = initialState, action) => {
             return {
                 ...state,
                 blogs: [
-                    action.payload,
                     ...state.blogs,
+                    action.payload,
                 ],
             };
         case ADD_HISTORY:

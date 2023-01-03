@@ -1,8 +1,11 @@
 import React from 'react';
 import { MdEmojiObjects } from 'react-icons/md';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { addHistory } from '../redux/actions/blogsActions';
 
 const BlogCard = ({ blog }) => {
+    const dispatch = useDispatch();
     const { _id, date, description, img, name, tags, title, } = blog;
 
     const fixedWordLength = (sentence, wordLen) => {
@@ -38,7 +41,9 @@ const BlogCard = ({ blog }) => {
                             </div>
                         </div>
                     </div>
-                    <Link to={`/blog/${_id}`}>
+                    <Link to={`/blog/${_id}`}
+                        onClick={() => dispatch(addHistory(blog))}
+                    >
                         <button className='text-white bg-gray-700 hover:bg-gray-800 px-4 py-2 rounded-lg'>Details</button>
                     </Link>
                 </div>

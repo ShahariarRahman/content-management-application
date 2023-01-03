@@ -41,8 +41,8 @@ const Home = () => {
                         </div>
                     </div>
                     <div className='lg:flex items-center m-2'>
-                        <p className="font-medium mr-3"> Sort By: </p>
-                        <select onChange={(e) => console.log(e.target.value)} className="px-8 py-3 font-medium rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 text-gray-800">
+                        <p className="font-medium mr-2"> Sort By : </p>
+                        <select onChange={(e) => console.log(e.target.value)} className="px-4 py-2 font-medium rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 text-gray-800">
                             <option value="latest">Latest Upload</option>
                             <option value="oldest">Oldest First</option>
                         </select>

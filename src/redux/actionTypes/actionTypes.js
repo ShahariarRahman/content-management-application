@@ -1,4 +1,5 @@
 export const LOAD_BLOGS = "LOAD_BLOGS";
+export const ADD_HISTORY = "ADD_HISTORY";
 
 // filters
 export const TOGGLE_TAGS = "TOGGLE_TAGS";

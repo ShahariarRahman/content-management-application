@@ -1,30 +1,34 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
 import { format } from 'date-fns'
+import { useDispatch } from 'react-redux';
+import { addBlog } from '../../redux/actions/blogsActions';
 
 const AddBlog = () => {
+    const dispatch = useDispatch();
     const { register, handleSubmit } = useForm();
 
     const date = format(new Date(), 'PP');
+    const time = format(new Date(), 'pp');
 
     const tags = [];
 
     const onSubmit = data => {
         for (const [key, value] of Object.entries(data)) {
-            if ((value === true) && (key === "html" || key === "css" || key === "javaScript" || key === "reactJs" || key === "nodeJs" || key === "expressJs" || key === "mongodb")) {
+            if ((value === true) && (key === "html" || key === "css" || key === "javascript" || key === "reactJs" || key === "nodejs" || key === "expressJs" || key === "mongodb")) {
                 tags.push(key);
             };
         };
 
         const blog = {
-            date: date,
-            description: data.description,
-            img: data.img,
-            name: data.name,
-            tags: tags,
+            date: [time, date,],
             title: data.title,
+            tags: tags,
+            description: data.description,
+            name: data.name,
+            img: data.img,
         };
-        console.log(blog);
+        dispatch(addBlog(blog));
     };
     return (
         <main className="main flex flex-col flex-grow -ml-64 md:ml-0 transition-all duration-150 ease-in bg-gray-300">
@@ -63,10 +67,10 @@ const AddBlog = () => {
                                                 <label htmlFor="css">Css</label>
 
                                                 <input
-                                                    {...register("javaScript")} checked
-                                                    type="checkbox" name="javaScript" id='javaScript' className='mx-2'
+                                                    {...register("javascript")} checked
+                                                    type="checkbox" name="javascript" id='javascript' className='mx-2'
                                                 />
-                                                <label htmlFor="javaScript">JavaScript</label>
+                                                <label htmlFor="javascript">JavaScript</label>
 
                                                 <input
                                                     {...register("reactJs")} checked
@@ -75,10 +79,10 @@ const AddBlog = () => {
                                                 <label htmlFor="reactJs">ReactJS</label>
 
                                                 <input
-                                                    {...register("nodeJs")}
-                                                    type="checkbox" name="nodeJs" id='nodeJs' className='mx-2'
+                                                    {...register("nodejs")}
+                                                    type="checkbox" name="nodejs" id='nodejs' className='mx-2'
                                                 />
-                                                <label htmlFor="nodeJs">NodeJS</label>
+                                                <label htmlFor="nodejs">NodeJS</label>
 
                                                 <input
                                                     {...register("expressJs")}

@@ -3,6 +3,7 @@ import { RiDeleteBin2Line } from 'react-icons/ri';
 import { BiEdit } from 'react-icons/bi';
 import { useDispatch, useSelector } from 'react-redux';
 import loadBlogsData from '../../redux/thunk/blogs/fetchBlogs';
+import deleteBlog from '../../redux/thunk/blogs/deleteBlog';
 
 const BlogList = () => {
     const blogs = useSelector(state => state.blog.blogs);
@@ -41,11 +42,19 @@ const BlogList = () => {
                                             <th className="text-sm text-gray-900 px-6 py-4 whitespace-nowrap font-medium">{index + 1}</th>
                                             <td title={blog.title} className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{blog.title.split(" ", 5).join(" ")}...</td>
                                             <td className="text-sm text-gray-900 px-6 py-4 whitespace-nowrap">{blog.date}</td>
-                                            <td className="text-xl text-green-600 px-6 py-4 whitespace-nowrap">
-                                                <button > <BiEdit />  </button>
+                                            <td className="px-4 py-2" >
+                                                <button
+                                                    onClick={() => console.log('update')}
+                                                    className='text-xl px-3 py-2 whitespace-nowrap text-green-600 border border-green-300 rounded'
+                                                >
+                                                    <BiEdit />
+                                                </button>
                                             </td>
-                                            <td className="text-xl text-red-600 px-6 py-4 whitespace-nowrap">
-                                                <button>
+                                            <td className="px-4 py-2">
+                                                <button
+                                                    onClick={() => dispatch(deleteBlog(blog))}
+                                                    className='text-xl px-3 py-2 whitespace-nowrap text-red-600 border border-red-300 rounded'
+                                                >
                                                     < RiDeleteBin2Line />
                                                 </button>
                                             </td>

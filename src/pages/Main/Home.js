@@ -32,8 +32,8 @@ const Home = () => {
                                     key={i}
                                     onClick={() => dispatch(toggleTags(object.tag))}
                                     className={`px-3 py-2 rounded-md ${tags.includes(object.tag) ?
-                                        "bg-gray-700 hover:bg-gray-800 text-white" :
-                                        "bg-gray-200 hover:bg-gray-300 text-gray-800"}`
+                                        "bg-gray-700 text-white" :
+                                        "bg-gray-200 text-gray-800"}`
                                     }
                                 >{object.name}
                                 </button>

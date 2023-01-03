@@ -1,4 +1,4 @@
-import { ADD_BLOG, ADD_HISTORY, LOAD_BLOGS } from "../actionTypes/actionTypes";
+import { ADD_BLOG, ADD_HISTORY, LOAD_BLOGS, REMOVE_BLOG } from "../actionTypes/actionTypes";
 
 export const loadBlogs = (blogs) => {
     return {
@@ -8,6 +8,11 @@ export const loadBlogs = (blogs) => {
 export const addBlog = (blog) => {
     return {
         type: ADD_BLOG, payload: blog,
+    };
+};
+export const removeBlog = (blog) => {
+    return {
+        type: REMOVE_BLOG, payload: blog,
     };
 };
 export const addHistory = (blog) => {

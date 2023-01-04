@@ -1,3 +1,4 @@
+import { format, formatDistance, formatDistanceToNow } from 'date-fns';
 import React from 'react';
 import { MdEmojiObjects } from 'react-icons/md';
 import { useDispatch } from 'react-redux';
@@ -7,6 +8,11 @@ import { addHistory } from '../redux/actions/blogsActions';
 const BlogCard = ({ blog }) => {
     const dispatch = useDispatch();
     const { _id, date, description, img, name, tags, title, } = blog || {};
+
+    // const dateFormat = new Date(date);
+
+    const dif = formatDistanceToNow(new Date(date))
+    console.log(dif)
 
     const fixedWordLength = (sentence, wordLen) => {
         return sentence.split(" ", wordLen).join(" ");
@@ -35,7 +41,7 @@ const BlogCard = ({ blog }) => {
                         <div className="text-sm">
                             <div>
                                 <p className="text-gray-900 leading-none">{name}</p>
-                                <p className="text-gray-600">{date}</p>
+                                <p className="text-gray-600">{dif}</p>
                             </div>
                         </div>
                     </div>

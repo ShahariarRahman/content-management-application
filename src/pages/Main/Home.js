@@ -50,7 +50,7 @@ const Home = () => {
                 </div>
             </div>
             <div className='max-w-screen-2xl grid lg:grid-cols-2 xl:grid-cols-3 gap-5 mx-5 mt-5'>
-                {blogs.map(blog => <BlogCard key={blog._id} blog={blog} />)}
+                {blogs.sort((a, b) => new Date(b.date) - new Date(a.date)).map(blog => <BlogCard key={blog._id} blog={blog} />)}
             </div>
         </div>
     );

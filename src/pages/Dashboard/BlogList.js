@@ -4,6 +4,7 @@ import { BiEdit } from 'react-icons/bi';
 import { useDispatch, useSelector } from 'react-redux';
 import loadBlogsData from '../../redux/thunk/blogs/fetchBlogs';
 import deleteBlog from '../../redux/thunk/blogs/deleteBlog';
+import { Link } from 'react-router-dom';
 
 const BlogList = () => {
     const blogs = useSelector(state => state.blog.blogs);
@@ -43,12 +44,11 @@ const BlogList = () => {
                                             <td title={blog.title} className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{blog.title.split(" ", 5).join(" ")}...</td>
                                             <td className="text-sm text-gray-900 px-6 py-4 whitespace-nowrap">{blog.date}</td>
                                             <td className="px-4 py-2" >
-                                                <button
-                                                    onClick={() => console.log('update')}
-                                                    className='text-xl px-3 py-2 whitespace-nowrap text-green-600 border border-green-300 rounded'
-                                                >
-                                                    <BiEdit />
-                                                </button>
+                                                <Link to={`updateBlog/${blog._id}`}>
+                                                    <button className='text-xl px-3 py-2 whitespace-nowrap text-green-600 border border-green-300 rounded' >
+                                                        <BiEdit />
+                                                    </button>
+                                                </Link>
                                             </td>
                                             <td className="px-4 py-2">
                                                 <button

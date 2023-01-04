@@ -1,4 +1,4 @@
-import { ADD_BLOG, ADD_HISTORY, LOAD_BLOGS, REMOVE_BLOG } from "../actionTypes/actionTypes";
+import { ADD_BLOG, ADD_HISTORY, LOAD_BLOGS, REMOVE_BLOG, UPDATE_BLOG } from "../actionTypes/actionTypes";
 
 const initialState = {
     blogs: [],
@@ -16,6 +16,15 @@ const blogsReducer = (state = initialState, action) => {
                 ...state,
                 blogs: [
                     ...state.blogs,
+                    action.payload,
+                ],
+            };
+        case UPDATE_BLOG:
+            const newBlog = state.blogs.filter(blog => blog._id !== action.payload._id);
+            return {
+                ...state,
+                blogs: [
+                    ...newBlog,
                     action.payload,
                 ],
             };

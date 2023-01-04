@@ -1,13 +1,14 @@
 import React, { useEffect } from 'react';
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
-import addBlogData from '../../redux/thunk/blogs/addBlogData';
+import { useNavigate, useParams } from 'react-router-dom';
+import { updateBlog } from '../../redux/actions/blogsActions';
 import loadBlogsData from '../../redux/thunk/blogs/fetchBlogs';
+import updateBlogData from '../../redux/thunk/blogs/updateBlogData';
 
 const UpdateBlog = () => {
     const { blogId } = useParams();
-
+    const navigate = useNavigate();
     const blogs = useSelector(state => state.blog.blogs);
 
     const dispatch = useDispatch();
@@ -15,7 +16,7 @@ const UpdateBlog = () => {
     const { register, handleSubmit, reset } = useForm();
 
     const blog = blogs.find(blog => blog._id === blogId);
-    const { description, img, name, tags, title, } = blog || {};
+    const { _id, description, img, name, tags, title, } = blog || {};
 
     useEffect(() => {
         dispatch(loadBlogsData());
@@ -47,6 +48,7 @@ const UpdateBlog = () => {
         };
 
         const blog = {
+            _id: _id,
             date: date,
             title: data.title,
             tags: newTag,
@@ -54,7 +56,7 @@ const UpdateBlog = () => {
             name: data.name,
             img: data.img,
         };
-        console.log(blog);
+        dispatch(updateBlogData(blog, navigate));
     };
     return (
         <main className="main flex flex-col flex-grow -ml-64 md:ml-0 transition-all duration-150 ease-in bg-gray-300">

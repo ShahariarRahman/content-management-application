@@ -1,6 +1,6 @@
 import { addBlog } from "../../actions/blogsActions";
 
-const addBlogData = (blog) => {
+const addBlogData = (blog, navigate) => {
     return async (dispatch, getState) => {
         const res = await fetch('http://localhost:5000/blog', {
             method: 'POST',
@@ -15,6 +15,7 @@ const addBlogData = (blog) => {
                 _id: data.insertedId,
                 ...blog,
             }))
+            navigate('/dashboard/');
         };
     };
 };

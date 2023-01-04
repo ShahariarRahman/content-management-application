@@ -1,9 +1,11 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import addBlogData from '../../redux/thunk/blogs/addBlogData';
 
 const AddBlog = () => {
+    const navigate = useNavigate();
     const dispatch = useDispatch();
     const { register, handleSubmit } = useForm();
 
@@ -26,7 +28,7 @@ const AddBlog = () => {
             name: data.name,
             img: data.img,
         };
-        dispatch(addBlogData(blog));
+        dispatch(addBlogData(blog, navigate));
     };
     return (
         <main className="main flex flex-col flex-grow -ml-64 md:ml-0 transition-all duration-150 ease-in bg-gray-300">

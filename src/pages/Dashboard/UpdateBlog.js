@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
-import { updateBlog } from '../../redux/actions/blogsActions';
 import loadBlogsData from '../../redux/thunk/blogs/fetchBlogs';
 import updateBlogData from '../../redux/thunk/blogs/updateBlogData';
 

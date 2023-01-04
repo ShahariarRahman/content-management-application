@@ -10,7 +10,6 @@ const updateBlogData = (blog, navigate) => {
             body: JSON.stringify(blog),
         });
         const data = await res.json();
-        console.log(data);
         if (data.acknowledged && data.modifiedCount) {
             dispatch(updateBlog(blog));
             navigate('/dashboard/');

@@ -4,6 +4,7 @@ import { MdEmojiObjects } from 'react-icons/md';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { addHistory } from '../redux/actions/blogsActions';
+import { toggleTags } from '../redux/actions/filterActions';
 
 const BlogCard = ({ blog }) => {
     const dispatch = useDispatch();
@@ -29,7 +30,9 @@ const BlogCard = ({ blog }) => {
                                 key={i}
                                 className="pr-2 hover:underline capitalize font-semibold"
                             >
-                                <a href={`https://www.google.com/search?q=${tag}`} target="blank">{tag}</a>
+                                <button onClick={() => dispatch(toggleTags(tag))} >
+                                    {tag}
+                                </button>
                             </span>)}
                         </p>
                     </div>

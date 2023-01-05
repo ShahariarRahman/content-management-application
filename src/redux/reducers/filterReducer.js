@@ -1,17 +1,25 @@
-import { TOGGLE_TAGS } from "../actionTypes/actionTypes";
+import { TOGGLE_SORT, TOGGLE_TAGS } from "../actionTypes/actionTypes";
 
 const initialState = {
     filter: {
         tags: [],
     },
     sort: {
-        time: [],
+        time: "latest",
     },
 };
 const filterReducer = (state = initialState, action) => {
-    const selectedTags = state.filter.tags.includes(action.payload);
     switch (action.type) {
+        case TOGGLE_SORT:
+            return {
+                ...state,
+                sort: {
+                    ...state.sort,
+                    time: action.payload,
+                },
+            };
         case TOGGLE_TAGS:
+            const selectedTags = state.filter.tags.includes(action.payload);
             if (selectedTags) {
                 return {
                     ...state,

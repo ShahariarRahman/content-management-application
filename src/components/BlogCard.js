@@ -1,4 +1,4 @@
-import { format, formatDistance, formatDistanceToNow } from 'date-fns';
+import { formatDistanceToNowStrict } from 'date-fns';
 import React from 'react';
 import { MdEmojiObjects } from 'react-icons/md';
 import { useDispatch } from 'react-redux';
@@ -9,16 +9,13 @@ const BlogCard = ({ blog }) => {
     const dispatch = useDispatch();
     const { _id, date, description, img, name, tags, title, } = blog || {};
 
-    // const dateFormat = new Date(date);
-
-    const dif = formatDistanceToNow(new Date(date))
-    console.log(dif)
+    const time = formatDistanceToNowStrict(new Date(date))
 
     const fixedWordLength = (sentence, wordLen) => {
         return sentence.split(" ", wordLen).join(" ");
     };
     return (
-        <div className="max-w-lg w-full lg:max-w-full lg:flex">
+        <div className="max-w-lg w-full lg:max-w-full lg:flex mx-auto">
             <div className="border w-full border-gray-400 bg-white p-4 flex flex-col justify-between leading-normal rounded-lg">
                 <div className="mb-8">
                     <h2 title={title} className="text-gray-900 font-bold text-xl mb-2">{fixedWordLength(title, 6)}</h2>
@@ -27,7 +24,7 @@ const BlogCard = ({ blog }) => {
                         <p className="ml-2 text-sm text-gray-600 flex items-center">
                             {tags.map((tag, i) => <span
                                 key={i}
-                                className="pr-2 hover:underline"
+                                className="pr-2 hover:underline capitalize font-semibold"
                             >
                                 <a href={`https://www.google.com/search?q=${tag}`} target="blank">{tag}</a>
                             </span>)}
@@ -41,7 +38,7 @@ const BlogCard = ({ blog }) => {
                         <div className="text-sm">
                             <div>
                                 <p className="text-gray-900 leading-none">{name}</p>
-                                <p className="text-gray-600">{dif}</p>
+                                <p className="text-gray-600">{time} ago</p>
                             </div>
                         </div>
                     </div>

@@ -1,3 +1,4 @@
+import { format } from 'date-fns';
 import React, { useEffect } from 'react';
 import { MdEmojiObjects } from 'react-icons/md';
 import { useDispatch, useSelector } from 'react-redux';
@@ -46,7 +47,7 @@ const Blog = () => {
                             <div className='text-center mt-4'>
                                 <p className="text-gray-600">Author</p>
                                 <p className="text-gray-900 text-xl font-semibold">{name}</p>
-                                <p className="text-gray-600">Publish On : {date}</p>
+                                <p className="text-gray-600">Publish On : {format(new Date(date), "PPpp")}</p>
                             </div>
                         </div>
                     </div>

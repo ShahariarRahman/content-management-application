@@ -7,7 +7,7 @@ import addBlogData from '../../redux/thunk/blogs/addBlogData';
 const AddBlog = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit, } = useForm();
 
     const date = new Date().toString();
 
@@ -43,7 +43,7 @@ const AddBlog = () => {
                                         <div className="mb-4 md:mr-2">
                                             <label className="block mb-2 text-sm font-bold text-gray-700" htmlFor="title">Title:</label>
                                             <input
-                                                defaultValue="ReactJS is better than other javaScript library library" {...register("title")}
+                                                {...register("title")} required
                                                 className="w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                                                 id="name"
                                                 type="title"
@@ -52,7 +52,7 @@ const AddBlog = () => {
                                         </div>
                                         <div className="mb-4 md:mr-2 md:mb-0">
                                             <label className="block mb-2 text-sm font-bold text-gray-700" htmlFor="firstName">Topics:</label>
-                                            <div className='select-none text-sm'>
+                                            <div className='select-none text-sm' >
 
                                                 <input
                                                     {...register("html")}
@@ -67,13 +67,13 @@ const AddBlog = () => {
                                                 <label htmlFor="css">Css</label>
 
                                                 <input
-                                                    {...register("javascript")} defaultChecked
+                                                    {...register("javascript")}
                                                     type="checkbox" name="javascript" id='javascript' className='mx-2'
                                                 />
                                                 <label htmlFor="javascript">JavaScript</label>
 
                                                 <input
-                                                    {...register("reactJs")} defaultChecked
+                                                    {...register("reactJs")}
                                                     type="checkbox" name="reactJs" id='reactJs' className='mx-2'
                                                 />
                                                 <label htmlFor="reactJs">ReactJS</label>
@@ -103,11 +103,12 @@ const AddBlog = () => {
                                         <div className="mb-4 md:mr-2">
                                             <label className="block mb-2 text-sm font-bold text-gray-700" htmlFor="name">Author Name</label>
                                             <input
-                                                defaultValue="Md. Shahariar Rahman" {...register("name")}
+                                                {...register("name")}
                                                 className="w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                                                 id="name"
                                                 type="text"
                                                 placeholder="Your Name"
+                                                required
                                             />
                                         </div>
                                         <div>
@@ -115,11 +116,12 @@ const AddBlog = () => {
                                                 Profile Picture
                                             </label>
                                             <input
-                                                defaultValue="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?w=100&h=100" {...register("img")}
+                                                {...register("img")}
                                                 className="w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                                                 id="img"
                                                 type="text"
                                                 placeholder="Profile Picture Link"
+                                                required
                                             />
                                         </div>
                                     </div>
@@ -130,10 +132,11 @@ const AddBlog = () => {
                                         Write a Blog
                                     </label>
                                     <textarea
-                                        defaultValue="Compared to other frontend frameworks, the React code is easier to maintain and is flexible due to its modular structure. This flexibility, in turn, saves huge amount of time and cost to businesses." {...register("description")}
+                                        {...register("description")}
                                         className="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                                         placeholder="Write here ..."
                                         rows={4}
+                                        required
                                     />
                                 </div>
                                 <div className="mb-6 text-center">

@@ -1,4 +1,4 @@
-import { ADD_BLOG, ADD_HISTORY, LOAD_BLOGS, REMOVE_BLOG, UPDATE_BLOG } from "../actionTypes/actionTypes";
+import { ADD_CONTENT, ADD_HISTORY, GET_CONTENT, DELETE_CONTENT, UPDATE_CONTENT } from "../actionTypes/actionTypes";
 
 const initialState = {
     blogs: [],
@@ -6,12 +6,12 @@ const initialState = {
 };
 const blogsReducer = (state = initialState, action) => {
     switch (action.type) {
-        case LOAD_BLOGS:
+        case GET_CONTENT:
             return {
                 ...state,
                 blogs: action.payload,
             };
-        case ADD_BLOG:
+        case ADD_CONTENT:
             return {
                 ...state,
                 blogs: [
@@ -19,7 +19,7 @@ const blogsReducer = (state = initialState, action) => {
                     action.payload,
                 ],
             };
-        case UPDATE_BLOG:
+        case UPDATE_CONTENT:
             const newBlog = state.blogs.filter(blog => blog._id !== action.payload._id);
             return {
                 ...state,
@@ -28,7 +28,7 @@ const blogsReducer = (state = initialState, action) => {
                     action.payload,
                 ],
             };
-        case REMOVE_BLOG:
+        case DELETE_CONTENT:
             return {
                 ...state,
                 blogs: state.blogs.filter(blog => blog._id !== action.payload._id),

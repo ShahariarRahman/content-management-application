@@ -2,7 +2,7 @@ import { addBlog } from "../../actions/blogsActions";
 
 const addBlogData = (blog, navigate) => {
     return async (dispatch, getState) => {
-        const res = await fetch('http://localhost:5000/blog', {
+        const res = await fetch('https://ocean-of-blogger-api.onrender.com/blog', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

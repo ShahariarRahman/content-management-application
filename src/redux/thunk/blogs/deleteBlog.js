@@ -2,7 +2,7 @@ import { removeBlog } from "../../actions/blogsActions";
 
 const deleteBlog = (blog) => {
     return async (dispatch, getState) => {
-        const res = await fetch(`http://localhost:5000/blog/${blog._id}`, {
+        const res = await fetch(`https://ocean-of-blogger-api.onrender.com/blog/${blog._id}`, {
             method: 'DELETE',
         });
         const data = await res.json();

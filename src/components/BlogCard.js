@@ -12,13 +12,16 @@ const BlogCard = ({ blog }) => {
     const time = formatDistanceToNowStrict(new Date(date))
 
     const fixedWordLength = (sentence, wordLen) => {
-        return sentence.split(" ", wordLen).join(" ");
+        if (sentence.split(" ").length > wordLen) {
+            return `${sentence.split(" ", wordLen).join(" ")} ...`;
+        };
+        return sentence;
     };
     return (
         <div className="max-w-lg w-full lg:max-w-full lg:flex mx-auto">
             <div className="border w-full border-gray-400 bg-white p-4 flex flex-col justify-between leading-normal rounded-lg">
                 <div className="mb-8">
-                    <h2 title={title} className="text-gray-900 font-bold text-xl mb-2">{fixedWordLength(title, 6)}</h2>
+                    <h2 title={title} className="text-gray-900 font-bold text-xl mb-2">{fixedWordLength(title, 5)}</h2>
                     <div className='flex items-center my-2'>
                         < MdEmojiObjects />
                         <p className="ml-2 text-sm text-gray-600 flex items-center">
@@ -30,7 +33,7 @@ const BlogCard = ({ blog }) => {
                             </span>)}
                         </p>
                     </div>
-                    <p className="text-gray-700 text-base">{fixedWordLength(description, 10)}</p>
+                    <p title={description} className="text-gray-700 text-base">{fixedWordLength(description, 10)}</p>
                 </div>
                 <div className="flex flex-row-reverse items-center justify-between">
                     <div className='flex items-center'>

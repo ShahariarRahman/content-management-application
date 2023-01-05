@@ -45,7 +45,7 @@ const BlogList = () => {
                                                 <th className="text-sm text-gray-900 px-6 py-4 whitespace-nowrap font-medium">{index + 1}</th>
                                                 <td title={blog.title} className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                                                     {blog.title.split(" ", 7).join(" ")}
-                                                    {blog.title.split(" ").length >= 7 && ' ...'}
+                                                    {blog.title.split(" ").length > 7 && ' ...'}
                                                 </td>
                                                 <td className="text-sm text-gray-900 px-6 py-4 whitespace-nowrap">{format(new Date(blog.date), "PPpp")}</td>
                                                 <td className="px-4 py-2" >
